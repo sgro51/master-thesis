@@ -5,7 +5,7 @@ These programs can be seen as an addition to Metos3D (https://github.com/metos3d
 The integration into Metos3D works as follows:
 After downloading Metos3D as on https://metos3d.github.io/, one can replace the programs metos3d_type.h, metos3d_transport.h, metos3d_transport.c, metos3d_timestep.h, metos3d_timestep.c (in the file metos3d/simpack/src) by the respective programs metos3d_type_v2.h, metos3d_transport_v2.h, metos3d_transport_v2.c, metos3d_timestep_v2.h, metos3d_timestep_2.c. 
 
-When running the programm, an option file has to be provided. Examples for this can be found in metos3d/model/model/N/option/test.N.option.txt. The option file has to be changed to represent the time integrator. A new example using the IMEX-3 scheme for the N model can therefore be found in option_IMEX-3.txt.
+When running the programm, an option file has to be provided. Examples for this can be found in metos3d/model/model/N/option/test.N.option.txt. The option file has to be changed to represent the time integrator. New examples and the used options for the experiments in the master thesis can therefore be found in the repository "option files".
 
 To use the IMEX-2 or IMEX-3 scheme, inverse transport matrices (which correspond to the vertical diffusion matrix) and matrices in different step sizes have to be provided. The matrices with bigger step sizes can be computed with the matrix command. Its usage is
 
