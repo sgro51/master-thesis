@@ -23,7 +23,8 @@ The input directory is specified in the option file by
 
 In the directory metos3d/data/TMM/2.8/Transport/Matrix5_4, create the new matrices by:
 
-metos3d matrix exp 12 2 1dt/Ae_%02d.petsc 1dt/Ae2_%02d.petsc\\
+metos3d matrix exp 12 2 1dt/Ae_%02d.petsc 1dt/Ae2_%02d.petsc
+
 metos3d matrix imp 12 2 1dt/Ai_%02d.petsc 1dt/Ai2_%02d.petsc
 
 metos3d matrixinversion 12 1dt/Ai2_%02d.petsc 1dt/Di2_%02d.petsc.
