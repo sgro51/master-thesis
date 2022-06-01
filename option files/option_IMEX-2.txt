@@ -29,8 +29,8 @@
 -Metos3DTracerCount                                 1
 -Metos3DTracerName                                  N
 -Metos3DTracerInitValue                             2.17e+0
--Metos3DTracerOutputDirectory                       work/IMEX-3/
--Metos3DTracerOutputFile                            N_I3.petsc
+-Metos3DTracerOutputDirectory                       work/IMEX-2/
+-Metos3DTracerOutputFile                            N_I2.petsc
 # weight with volumes and sum up
 -Metos3DTracerMonitor
 
@@ -74,18 +74,18 @@
 
 # time stepping
 -Metos3DTimeStepStart                               0.0
--Metos3DTimeStepCount                               960
--Metos3DTimeStep                                    0.0010416666666666
+-Metos3DTimeStepCount                               1
+-Metos3DTimeStep                                    0.0003472222222222
 
 #integration
--Metos3DTimeIntegrator					    IMEX-3
+-Metos3DTimeIntegrator					    IMEX-2
 
 # solver
 -Metos3DSolverType                                  Spinup
--Metos3DSpinupCount                                 10000
--Metos3DSpinupMonitor					    TRUE
--Metos3DSpinupMonitorFileFormatPrefix 		    sp$00005d-,ts$003d-
--Metos3DSpinupMonitorModuloStep 			    50,960
+-Metos3DSpinupCount                                 1
+#-Metos3DSpinupMonitor					    TRUE
+#-Metos3DSpinupMonitorFileFormatPrefix 		    sp$00005d-,ts$003d-
+#-Metos3DSpinupMonitorModuloStep 			    50,960
 
 ## solver (PETSc)
 #-Metos3DSolverType                                  Newton
