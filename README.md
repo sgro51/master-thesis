@@ -7,19 +7,23 @@ After downloading Metos3D as on https://metos3d.github.io/, one can replace the 
 
 When running the programm, an option file has to be provided. Examples for this can be found in metos3d/model/model/N/option/test.N.option.txt. The option file has to be changed to represent the time integrator. A new example using the IMEX-3 scheme for the N model can therefore be found in option_IMEX-3.txt.
 
-To use the IMEX-2 or IMEX-3 scheme, inverse transport matrices (which correspond to the vertical diffusion matrix) and matrices in different step sizes have to be provided. The matrices with bigger step sizes can be computed with the matrix command. Its usage is 
+To use the IMEX-2 or IMEX-3 scheme, inverse transport matrices (which correspond to the vertical diffusion matrix) and matrices in different step sizes have to be provided. The matrices with bigger step sizes can be computed with the matrix command. Its usage is
+
 metos3d [-v] matrix [exp|imp] [count] [factor] [file-format-in] [file-format-out].
+
 To also compute the inverse matrices, replace the program metos3d_mod.py in metos3d/metos3d by metos3d_mod_v2.py. Then, inverse matrices can be computed with the matrixinversion command. Its usage is 
+
 metos3d [-v] matrixinversion [count] [file-format-in] [file-format-out].
 
 For the IMEX-2 scheme with a step size Delta t, the matrices for Delta t, the implicit matrix for Delta t /2 and the inverse implicit matrix for Delta t have to be provided.
 An example would be the step size 2dt (smallest possible step size for IMEX-2): 
 The input directory is specified in the option file by 
+
 -Metos3DMatrixInputDirectory data/TMM/2.8/Transport/Matrix5_4/1dt/.
+
 In the directory metos3d/data/TMM/2.8/Transport/Matrix5_4, create the new matrices by:
 
-metos3d matrix exp 12 2 1dt/Ae_%02d.petsc 1dt/Ae2_%02d.petsc
-
+metos3d matrix exp 12 2 1dt/Ae_%02d.petsc 1dt/Ae2_%02d.petsc\\
 metos3d matrix imp 12 2 1dt/Ai_%02d.petsc 1dt/Ai2_%02d.petsc
 
 metos3d matrixinversion 12 1dt/Ai2_%02d.petsc 1dt/Di2_%02d.petsc.
