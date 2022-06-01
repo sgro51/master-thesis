@@ -19,6 +19,7 @@ The input directory is specified in the option file by
 In the directory metos3d/data/TMM/2.8/Transport/Matrix5_4, create the new matrices by:
 
 metos3d matrix exp 12 2 1dt/Ae_%02d.petsc 1dt/Ae2_%02d.petsc
+
 metos3d matrix imp 12 2 1dt/Ai_%02d.petsc 1dt/Ai2_%02d.petsc
 
 metos3d matrixinversion 12 1dt/Ai2_%02d.petsc 1dt/Di2_%02d.petsc.
@@ -26,7 +27,9 @@ metos3d matrixinversion 12 1dt/Ai2_%02d.petsc 1dt/Di2_%02d.petsc.
 For the IMEX-3 scheme, the smallest possible step size is 3dt. In this case, implicit and explicit matrices for 3dt and the implicit matrix for 2dt is needed. This is done by:
 
 metos3d matrix exp 12 3 1dt/Ae_%02d.petsc 1dt/Ae3_%02d.petsc
+
 metos3d matrix imp 12 3 1dt/Ai_%02d.petsc 1dt/Ai3_%02d.petsc
+
 metos3d matrix imp 12 2 1dt/Ai_%02d.petsc 1dt/Ai2_%02d.petsc.
 
 The python script m3d_matrixinversion offers a second possibility of creating the vertical diffusion matrices.
@@ -34,11 +37,13 @@ The python script m3d_matrixinversion offers a second possibility of creating th
 The step sizes provided in the option file have to be adapted to the scheme. The smallest possible step size for IMEX-2 is 2dt, which corresponds to the options
 
  -Metos3DTimeStepCount                              1440
+ 
  -Metos3DTimeStep                                   0.000694444444444
  
  The smallest step size for IMEX-3 is 3dt, which is displayed in the option file by 
  
  -Metos3DTimeStepCount                              960
+ 
  -Metos3DTimeStep                                   0.00104166666666.
  
  Bigger step sizes can of course be chosen, but the required matrices have to be prepared accordingly.
