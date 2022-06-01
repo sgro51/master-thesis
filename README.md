@@ -32,10 +32,12 @@ metos3d matrix imp 12 2 1dt/Ai_%02d.petsc 1dt/Ai2_%02d.petsc.
 The python script m3d_matrixinversion offers a second possibility of creating the vertical diffusion matrices.
 
 The step sizes provided in the option file have to be adapted to the scheme. The smallest possible step size for IMEX-2 is 2dt, which corresponds to the options
+
  -Metos3DTimeStepCount                              1440
  -Metos3DTimeStep                                   0.000694444444444
  
  The smallest step size for IMEX-3 is 3dt, which is displayed in the option file by 
+ 
  -Metos3DTimeStepCount                              960
  -Metos3DTimeStep                                   0.00104166666666.
  
